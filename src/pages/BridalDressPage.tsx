@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -62,6 +63,7 @@ const BridalDressPage = () => {
     if (!selectedTier || !budgetData) return;
 
     const selectedOption = bridalDressOptions.find(opt => opt.tier === selectedTier);
+    const avgPrice = (selectedOption!.priceRange[0] + selectedOption!.priceRange[1]) / 2;
 
     const updatedBudget = {
       ...budgetData,
@@ -69,8 +71,8 @@ const BridalDressPage = () => {
         ...budgetData.services,
         bridalDress: {
           tier: selectedTier,
-          priceRange: selectedOption!.priceRange,
-          fixedCost: true
+          fixedCost: avgPrice,
+          totalCost: avgPrice
         }
       }
     };

@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -50,6 +51,7 @@ const PhotographyPage = () => {
     if (!selectedTier || !budgetData) return;
     
     const selectedOption = photographyOptions.find(opt => opt.tier === selectedTier);
+    const avgPrice = (selectedOption!.priceRange[0] + selectedOption!.priceRange[1]) / 2;
     
     const updatedBudget = {
       ...budgetData,
@@ -57,15 +59,13 @@ const PhotographyPage = () => {
         ...budgetData.services,
         photography: {
           tier: selectedTier,
-          priceRange: selectedOption!.priceRange,
-          fixedCost: true
+          fixedCost: avgPrice,
+          totalCost: avgPrice
         }
       }
     };
 
     localStorage.setItem('weddingBudget', JSON.stringify(updatedBudget));
-    // Dispatch custom event to update FloatingTotal
-    window.dispatchEvent(new CustomEvent('budgetUpdated'));
     navigate('/bridal-dress');
   };
 
