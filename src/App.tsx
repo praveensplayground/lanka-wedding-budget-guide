@@ -11,6 +11,7 @@ import SummaryPage from "./pages/SummaryPage";
 import NotFound from "./pages/NotFound";
 import LiquorPage from "./pages/LiquorPage";
 import WeddingCakesPage from "./pages/WeddingCakesPage";
+import DecorationsPage from "./pages/DecorationsPage";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/wedding-cakes" element={<WeddingCakesPage />} />
           <Route path="/photography" element={<PhotographyPage />} />
           <Route path="/summary" element={<SummaryPage />} />
+          <Route path="/decorations" element={<DecorationsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

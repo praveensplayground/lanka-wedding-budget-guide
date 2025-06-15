@@ -3,37 +3,49 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Cake, ArrowLeft, ArrowRight } from "lucide-react";
+import { Flower2, ArrowLeft, ArrowRight } from "lucide-react";
 import { FloatingTotal } from "@/components/FloatingTotal";
 
-const cakeOptions = [
+const decorationOptions = [
   {
     tier: "budget",
-    title: "Budget Cakes & Boxes",
-    price: "LKR 400 - 600",
-    priceRange: [400, 600],
-    features: ["Simple butter cake", "Plain presentation", "Standard cake boxes"],
+    title: "Budget Decorations",
+    price: "LKR 500 - 800",
+    priceRange: [500, 800],
+    features: [
+      "Basic floral centerpieces",
+      "Simple backdrop",
+      "Minimal table décor"
+    ],
     color: "from-green-400 to-emerald-500"
   },
   {
     tier: "mid",
-    title: "Mid-Range Cakes & Boxes",
-    price: "LKR 700 - 800",
-    priceRange: [700, 800],
-    features: ["Rich fruit cake", "Decorative icing", "Quality boxes"],
+    title: "Mid-Range Decorations",
+    price: "LKR 1,300 - 2,000",
+    priceRange: [1300, 2000],
+    features: [
+      "Custom flower arrangements",
+      "Themed stage decor",
+      "Table runners & moderate lighting"
+    ],
     color: "from-blue-400 to-indigo-500"
   },
   {
     tier: "premium",
-    title: "Premium Cakes & Boxes",
-    price: "LKR 1,000 - 1,200",
-    priceRange: [1000, 1200],
-    features: ["Luxury cake flavors (e.g. ribbon cake)", "Elaborate designs", "Custom printed boxes"],
+    title: "Premium Decorations",
+    price: "LKR 3,000 - 4,000",
+    priceRange: [3000, 4000],
+    features: [
+      "Designer floral installations",
+      "Elegant themed decor",
+      "Premium lighting & ambience"
+    ],
     color: "from-purple-400 to-pink-500"
   }
 ];
 
-const WeddingCakesPage = () => {
+const DecorationsPage = () => {
   const [selectedTier, setSelectedTier] = useState<string>("");
   const [budgetData, setBudgetData] = useState<any>(null);
   const navigate = useNavigate();
@@ -49,24 +61,25 @@ const WeddingCakesPage = () => {
 
   const handleNext = () => {
     if (!selectedTier || !budgetData) return;
-    
-    const selectedOption = cakeOptions.find(opt => opt.tier === selectedTier);
+
+    const selectedOption = decorationOptions.find(opt => opt.tier === selectedTier);
+    // Decoration is per-person service
     const avgPrice = (selectedOption!.priceRange[0] + selectedOption!.priceRange[1]) / 2;
-    
+
     const updatedBudget = {
       ...budgetData,
       services: {
         ...budgetData.services,
-        weddingCakes: {
+        decorations: {
           tier: selectedTier,
           pricePerPerson: avgPrice,
           totalCost: avgPrice * budgetData.guestCount
         }
       }
     };
-
     localStorage.setItem('weddingBudget', JSON.stringify(updatedBudget));
-    navigate('/decorations');
+    // Next: Music/Band (to be implemented later)
+    navigate('/photography');
   };
 
   if (!budgetData) return null;
@@ -76,15 +89,15 @@ const WeddingCakesPage = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Cake className="h-6 w-6 text-rose-500" />
-            <h1 className="text-3xl font-serif text-rose-800">Wedding Cakes & Boxes</h1>
+            <Flower2 className="h-6 w-6 text-rose-500" />
+            <h1 className="text-3xl font-serif text-rose-800">Wedding Decorations</h1>
           </div>
-          <p className="text-rose-600">Select your preferred cake and box style</p>
+          <p className="text-rose-600">Choose your wedding atmosphere and decor style</p>
           <p className="text-sm text-rose-500 mt-2">For {budgetData.guestCount} guests</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
-          {cakeOptions.map((option) => (
+          {decorationOptions.map((option) => (
             <Card 
               key={option.tier}
               className={`cursor-pointer transition-all duration-300 ${
@@ -113,15 +126,14 @@ const WeddingCakesPage = () => {
             </Card>
           ))}
         </div>
-
         <div className="flex justify-between items-center max-w-6xl mx-auto">
           <Button
-            onClick={() => navigate('/liquor')}
+            onClick={() => navigate('/wedding-cakes')}
             variant="outline"
             className="border-rose-300 text-rose-700 hover:bg-rose-50"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Liquor
+            Back to Wedding Cakes & Boxes
           </Button>
           
           <Button
@@ -129,7 +141,7 @@ const WeddingCakesPage = () => {
             disabled={!selectedTier}
             className="bg-gradient-to-r from-rose-400 to-pink-400 hover:from-rose-500 hover:to-pink-500 text-white disabled:opacity-50"
           >
-            Next: Decorations
+            Next: Photography
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
         </div>
@@ -139,4 +151,4 @@ const WeddingCakesPage = () => {
   );
 };
 
-export default WeddingCakesPage;
+export default DecorationsPage;
