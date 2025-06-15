@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -51,7 +50,6 @@ const LiquorPage = () => {
     if (!selectedTier || !budgetData) return;
     
     const selectedOption = liquorOptions.find(opt => opt.tier === selectedTier);
-    const avgPrice = (selectedOption!.priceRange[0] + selectedOption!.priceRange[1]) / 2;
     
     const updatedBudget = {
       ...budgetData,
@@ -59,8 +57,8 @@ const LiquorPage = () => {
         ...budgetData.services,
         liquor: {
           tier: selectedTier,
-          pricePerPerson: avgPrice,
-          totalCost: avgPrice * budgetData.guestCount
+          priceRange: selectedOption!.priceRange,
+          pricePerPerson: true
         }
       }
     };
@@ -116,12 +114,12 @@ const LiquorPage = () => {
 
         <div className="flex justify-between items-center max-w-6xl mx-auto">
           <Button
-            onClick={() => navigate('/invitations')}
+            onClick={() => navigate('/wedding-car')}
             variant="outline"
             className="border-rose-300 text-rose-700 hover:bg-rose-50"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Invitations
+            Back to Wedding Car
           </Button>
           
           <Button

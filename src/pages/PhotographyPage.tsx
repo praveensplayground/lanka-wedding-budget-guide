@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -51,7 +50,6 @@ const PhotographyPage = () => {
     if (!selectedTier || !budgetData) return;
     
     const selectedOption = photographyOptions.find(opt => opt.tier === selectedTier);
-    const avgPrice = (selectedOption!.priceRange[0] + selectedOption!.priceRange[1]) / 2;
     
     const updatedBudget = {
       ...budgetData,
@@ -59,8 +57,8 @@ const PhotographyPage = () => {
         ...budgetData.services,
         photography: {
           tier: selectedTier,
-          fixedCost: avgPrice,
-          totalCost: avgPrice
+          priceRange: selectedOption!.priceRange,
+          fixedCost: true
         }
       }
     };
