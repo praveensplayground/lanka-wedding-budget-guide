@@ -22,7 +22,7 @@ const SummaryPage = () => {
       let maxTotal = 0;
       
       Object.values(parsed.services || {}).forEach((service: any) => {
-        if (service.priceRange) {
+        if (service && service.priceRange && Array.isArray(service.priceRange) && service.priceRange.length >= 2) {
           // For per-person services
           if (service.pricePerPerson) {
             minTotal += service.priceRange[0] * parsed.guestCount;
@@ -80,7 +80,7 @@ const SummaryPage = () => {
   };
 
   const getServiceCostRange = (service: any, guestCount: number) => {
-    if (service.priceRange) {
+    if (service && service.priceRange && Array.isArray(service.priceRange) && service.priceRange.length >= 2) {
       if (service.pricePerPerson) {
         return {
           min: service.priceRange[0] * guestCount,
@@ -126,6 +126,10 @@ const SummaryPage = () => {
           <div className="grid gap-4">
             {Object.entries(budgetData.services || {}).map(([serviceKey, service]: [string, any]) => {
               const costRange = getServiceCostRange(service, budgetData.guestCount);
+              
+              // Only show services that have valid cost ranges
+              if (costRange.min === 0 && costRange.max === 0) return null;
+              
               return (
                 <Card key={serviceKey} className="bg-white/80 backdrop-blur-sm border-rose-200">
                   <CardContent className="p-6">
@@ -134,10 +138,10 @@ const SummaryPage = () => {
                         <h3 className="text-xl font-serif text-rose-800 capitalize mb-2">
                           {serviceKey.replace(/([A-Z])/g, ' $1').trim()}
                         </h3>
-                        <span className={`px-3 py-1 rounded-full text-sm font-medium capitalize ${getTierColor(service.tier)}`}>
-                          {service.tier} Tier
+                        <span className={`px-3 py-1 rounded-full text-sm font-medium capitalize ${getTierColor(service.tier || 'budget')}`}>
+                          {service.tier || 'budget'} Tier
                         </span>
-                        {service.pricePerPerson && (
+                        {service.pricePerPerson && service.priceRange && Array.isArray(service.priceRange) && (
                           <p className="text-sm text-rose-600 mt-2">
                             {formatRange(service.priceRange[0], service.priceRange[1])} per person × {budgetData.guestCount} guests
                           </p>
