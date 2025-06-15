@@ -127,7 +127,7 @@ const InvitationsPage = () => {
             disabled={!selectedTier}
             className="bg-gradient-to-r from-rose-400 to-pink-400 hover:from-rose-500 hover:to-pink-500 text-white disabled:opacity-50"
           >
-            Next: Wedding Car/Transport
+            Next: Drinks & Liquor
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
         </div>
