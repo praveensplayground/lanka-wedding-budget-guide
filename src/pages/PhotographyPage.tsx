@@ -64,6 +64,8 @@ const PhotographyPage = () => {
     };
 
     localStorage.setItem('weddingBudget', JSON.stringify(updatedBudget));
+    // Dispatch custom event to update FloatingTotal
+    window.dispatchEvent(new CustomEvent('budgetUpdated'));
     navigate('/bridal-dress');
   };
 

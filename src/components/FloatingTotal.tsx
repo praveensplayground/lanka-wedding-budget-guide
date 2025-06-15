@@ -39,9 +39,28 @@ export const FloatingTotal = () => {
       }
     };
 
+    // Calculate initial total
     calculateTotal();
-    const interval = setInterval(calculateTotal, 1000);
-    return () => clearInterval(interval);
+    
+    // Listen for storage changes instead of polling
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'weddingBudget') {
+        calculateTotal();
+      }
+    };
+
+    // Listen for custom events when localStorage is updated from the same tab
+    const handleBudgetUpdate = () => {
+      calculateTotal();
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('budgetUpdated', handleBudgetUpdate);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('budgetUpdated', handleBudgetUpdate);
+    };
   }, []);
 
   const formatCurrency = (amount: number) => {
