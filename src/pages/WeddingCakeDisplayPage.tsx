@@ -3,37 +3,49 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Camera, ArrowLeft, ArrowRight } from "lucide-react";
+import { Cake, ArrowLeft, ArrowRight } from "lucide-react";
 import { FloatingTotal } from "@/components/FloatingTotal";
 
-const photographyOptions = [
+const cakeDisplayOptions = [
   {
     tier: "budget",
-    title: "Budget Photography",
-    price: "LKR 30,000 - 50,000",
-    priceRange: [30000, 50000],
-    features: ["Basic photography coverage", "Digital copies included", "Standard editing"],
+    title: "Budget Wedding Cake Display",
+    price: "LKR 10,000 - 30,000",
+    priceRange: [10000, 30000],
+    features: [
+      "Simple cake design",
+      "Basic decoration setup",
+      "Standard presentation"
+    ],
     color: "from-green-400 to-emerald-500"
   },
   {
     tier: "mid",
-    title: "Mid-Range Photography",
-    price: "LKR 75,000 - 120,000",
-    priceRange: [75000, 120000],
-    features: ["Professional photographer", "Extended coverage", "Enhanced editing & prints"],
+    title: "Mid-Range Wedding Cake Display",
+    price: "LKR 40,000 - 80,000",
+    priceRange: [40000, 80000],
+    features: [
+      "Designer cake with decorations",
+      "Enhanced display setup",
+      "Professional presentation"
+    ],
     color: "from-blue-400 to-indigo-500"
   },
   {
     tier: "premium",
-    title: "Premium Photography",
-    price: "LKR 150,000 - 300,000",
-    priceRange: [150000, 300000],
-    features: ["Celebrity photographer", "Full day coverage", "Premium editing & album"],
+    title: "Premium Wedding Cake Display",
+    price: "LKR 90,000 - 150,000",
+    priceRange: [90000, 150000],
+    features: [
+      "Luxury multi-tier cake",
+      "Elaborate display setup",
+      "Premium presentation package"
+    ],
     color: "from-purple-400 to-pink-500"
   }
 ];
 
-const PhotographyPage = () => {
+const WeddingCakeDisplayPage = () => {
   const [selectedTier, setSelectedTier] = useState<string>("");
   const [budgetData, setBudgetData] = useState<any>(null);
   const navigate = useNavigate();
@@ -49,15 +61,15 @@ const PhotographyPage = () => {
 
   const handleNext = () => {
     if (!selectedTier || !budgetData) return;
-    
-    const selectedOption = photographyOptions.find(opt => opt.tier === selectedTier);
+
+    const selectedOption = cakeDisplayOptions.find(opt => opt.tier === selectedTier);
     const avgPrice = (selectedOption!.priceRange[0] + selectedOption!.priceRange[1]) / 2;
-    
+
     const updatedBudget = {
       ...budgetData,
       services: {
         ...budgetData.services,
-        photography: {
+        weddingCakeDisplay: {
           tier: selectedTier,
           fixedCost: avgPrice,
           totalCost: avgPrice
@@ -66,7 +78,7 @@ const PhotographyPage = () => {
     };
 
     localStorage.setItem('weddingBudget', JSON.stringify(updatedBudget));
-    navigate('/bridal-dress');
+    navigate('/jewelry');
   };
 
   if (!budgetData) return null;
@@ -76,14 +88,13 @@ const PhotographyPage = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Camera className="h-6 w-6 text-rose-500" />
-            <h1 className="text-3xl font-serif text-rose-800">Wedding Photography</h1>
+            <Cake className="h-6 w-6 text-rose-500" />
+            <h1 className="text-3xl font-serif text-rose-800">Wedding Cake Display</h1>
           </div>
-          <p className="text-rose-600">Capture your special moments with professional photography</p>
+          <p className="text-rose-600">Choose your perfect wedding cake and display setup</p>
         </div>
-
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
-          {photographyOptions.map((option) => (
+          {cakeDisplayOptions.map((option) => (
             <Card 
               key={option.tier}
               className={`cursor-pointer transition-all duration-300 ${
@@ -101,8 +112,8 @@ const PhotographyPage = () => {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
-                  {option.features.map((feature, index) => (
-                    <li key={index} className="flex items-center text-sm text-rose-700">
+                  {option.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-sm text-rose-700">
                       <div className="w-2 h-2 bg-rose-400 rounded-full mr-2"></div>
                       {feature}
                     </li>
@@ -112,30 +123,28 @@ const PhotographyPage = () => {
             </Card>
           ))}
         </div>
-
         <div className="flex justify-between items-center max-w-6xl mx-auto">
           <Button
-            onClick={() => navigate('/music-band')}
+            onClick={() => navigate('/jayamangala-ashtaka')}
             variant="outline"
             className="border-rose-300 text-rose-700 hover:bg-rose-50"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Music/Band
+            Back to Jayamangala/Ashtaka
           </Button>
           <Button
             onClick={handleNext}
             disabled={!selectedTier}
             className="bg-gradient-to-r from-rose-400 to-pink-400 hover:from-rose-500 hover:to-pink-500 text-white disabled:opacity-50"
           >
-            Next: Bridal Dress
+            Next: Jewelry
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
         </div>
       </div>
-
       <FloatingTotal />
     </div>
   );
 };
 
-export default PhotographyPage;
+export default WeddingCakeDisplayPage;

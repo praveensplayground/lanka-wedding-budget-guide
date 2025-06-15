@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +15,12 @@ import WeddingCakesPage from "./pages/WeddingCakesPage";
 import DecorationsPage from "./pages/DecorationsPage";
 import MusicBandPage from "./pages/MusicBandPage";
 import WeddingCarPage from "./pages/WeddingCarPage";
+import BridalDressPage from "./pages/BridalDressPage";
+import GroomDressPage from "./pages/GroomDressPage";
+import JayamangalaAshtakaPage from "./pages/JayamangalaAshtakaPage";
+import WeddingCakeDisplayPage from "./pages/WeddingCakeDisplayPage";
+import JewelryPage from "./pages/JewelryPage";
+import BridesmaidsbestmanPage from "./pages/BridesmaidsbestmanPage";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +40,12 @@ const App = () => (
           <Route path="/decorations" element={<DecorationsPage />} />
           <Route path="/music-band" element={<MusicBandPage />} />
           <Route path="/photography" element={<PhotographyPage />} />
+          <Route path="/bridal-dress" element={<BridalDressPage />} />
+          <Route path="/groom-dress" element={<GroomDressPage />} />
+          <Route path="/jayamangala-ashtaka" element={<JayamangalaAshtakaPage />} />
+          <Route path="/wedding-cake-display" element={<WeddingCakeDisplayPage />} />
+          <Route path="/jewelry" element={<JewelryPage />} />
+          <Route path="/bridesmaids-bestman" element={<BridesmaidsbestmanPage />} />
           <Route path="/summary" element={<SummaryPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
