@@ -10,6 +10,7 @@ import PhotographyPage from "./pages/PhotographyPage";
 import SummaryPage from "./pages/SummaryPage";
 import NotFound from "./pages/NotFound";
 import LiquorPage from "./pages/LiquorPage";
+import WeddingCakesPage from "./pages/WeddingCakesPage";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/venue" element={<VenuePage />} />
           <Route path="/invitations" element={<InvitationsPage />} />
           <Route path="/liquor" element={<LiquorPage />} />
+          <Route path="/wedding-cakes" element={<WeddingCakesPage />} />
           <Route path="/photography" element={<PhotographyPage />} />
           <Route path="/summary" element={<SummaryPage />} />
           <Route path="*" element={<NotFound />} />
