@@ -11,13 +11,15 @@ export const FloatingTotal = () => {
       const data = localStorage.getItem('weddingBudget');
       if (data) {
         const budgetData = JSON.parse(data);
-        let total = 0;
+        let subtotal = 0;
         
         Object.values(budgetData.services || {}).forEach((service: any) => {
-          total += service.totalCost || 0;
+          subtotal += service.totalCost || 0;
         });
         
-        setTotalCost(total);
+        // Add 10% miscellaneous cost
+        const miscellaneous = subtotal * 0.1;
+        setTotalCost(subtotal + miscellaneous);
       }
     };
 
@@ -41,7 +43,7 @@ export const FloatingTotal = () => {
         <div className="flex items-center gap-2">
           <Calculator className="h-5 w-5" />
           <div>
-            <div className="text-sm font-medium">Current Total</div>
+            <div className="text-sm font-medium">Total (incl. misc.)</div>
             <div className="text-xl font-bold">{formatCurrency(totalCost)}</div>
           </div>
         </div>

@@ -8,6 +8,7 @@ import { Download, ArrowLeft, Heart, Users } from "lucide-react";
 const SummaryPage = () => {
   const [budgetData, setBudgetData] = useState<any>(null);
   const [totalCost, setTotalCost] = useState(0);
+  const [miscellaneousCost, setMiscellaneousCost] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +21,10 @@ const SummaryPage = () => {
       Object.values(parsed.services || {}).forEach((service: any) => {
         total += service.totalCost || 0;
       });
+      
+      const misc = total * 0.1; // 10% miscellaneous
       setTotalCost(total);
+      setMiscellaneousCost(misc);
     } else {
       navigate('/');
     }
@@ -50,6 +54,8 @@ const SummaryPage = () => {
   };
 
   if (!budgetData) return null;
+
+  const finalTotal = totalCost + miscellaneousCost;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-amber-50">
@@ -105,12 +111,39 @@ const SummaryPage = () => {
             ))}
           </div>
 
+          {/* Subtotal */}
+          <Card className="bg-white/90 backdrop-blur-sm border-rose-300">
+            <CardContent className="p-6">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-serif text-rose-800">Subtotal</h3>
+                <div className="text-2xl font-bold text-rose-700">
+                  {formatCurrency(totalCost)}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Miscellaneous Cost */}
+          <Card className="bg-white/90 backdrop-blur-sm border-rose-300">
+            <CardContent className="p-6">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h3 className="text-xl font-serif text-rose-800">Miscellaneous</h3>
+                  <p className="text-sm text-rose-600">10% additional costs</p>
+                </div>
+                <div className="text-2xl font-bold text-rose-700">
+                  {formatCurrency(miscellaneousCost)}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Total Cost */}
           <Card className="bg-gradient-to-r from-rose-500 to-pink-500 text-white border-0">
             <CardContent className="p-8">
               <div className="text-center">
                 <h2 className="text-2xl font-serif mb-4">Total Estimated Cost</h2>
-                <div className="text-5xl font-bold mb-2">{formatCurrency(totalCost)}</div>
+                <div className="text-5xl font-bold mb-2">{formatCurrency(finalTotal)}</div>
                 <p className="text-rose-100">
                   This is an estimate based on your selections. Actual costs may vary.
                 </p>
