@@ -66,7 +66,7 @@ const WeddingCakesPage = () => {
     };
 
     localStorage.setItem('weddingBudget', JSON.stringify(updatedBudget));
-    navigate('/decorations');
+    navigate('/decorations'); // ensure it navigates to Decorations
   };
 
   if (!budgetData) return null;

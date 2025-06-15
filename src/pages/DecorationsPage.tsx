@@ -63,7 +63,6 @@ const DecorationsPage = () => {
     if (!selectedTier || !budgetData) return;
 
     const selectedOption = decorationOptions.find(opt => opt.tier === selectedTier);
-    // Decoration is per-person service
     const avgPrice = (selectedOption!.priceRange[0] + selectedOption!.priceRange[1]) / 2;
 
     const updatedBudget = {
@@ -78,7 +77,6 @@ const DecorationsPage = () => {
       }
     };
     localStorage.setItem('weddingBudget', JSON.stringify(updatedBudget));
-    // Next: Music/Band (to be implemented later)
     navigate('/photography');
   };
 
