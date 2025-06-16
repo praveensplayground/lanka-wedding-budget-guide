@@ -1,10 +1,8 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Car, ArrowLeft, ArrowRight } from "lucide-react";
-import { FloatingTotal } from "@/components/FloatingTotal";
 
 const carOptions = [
   {
@@ -130,7 +128,6 @@ const WeddingCarPage = () => {
           </Button>
         </div>
       </div>
-      <FloatingTotal />
     </div>
   );
 };
