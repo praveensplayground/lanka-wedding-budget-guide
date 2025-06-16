@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Gem, ArrowLeft, ArrowRight } from "lucide-react";
-import { FloatingTotal } from "@/components/FloatingTotal";
 
 const jewelryOptions = [
   {
@@ -142,7 +141,6 @@ const JewelryPage = () => {
           </Button>
         </div>
       </div>
-      <FloatingTotal />
     </div>
   );
 };
