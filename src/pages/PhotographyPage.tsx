@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -16,16 +17,16 @@ const photographyOptions = [
   {
     tier: "mid",
     title: "Mid-Range Photography",
-    price: "LKR 75,000 - 120,000",
-    priceRange: [75000, 120000],
+    price: "LKR 150,000 - 200,000",
+    priceRange: [150000, 200000],
     features: ["Professional photographer", "Extended coverage", "Enhanced editing & prints"],
     color: "from-blue-400 to-indigo-500"
   },
   {
     tier: "premium",
     title: "Premium Photography",
-    price: "LKR 150,000 - 300,000",
-    priceRange: [150000, 300000],
+    price: "LKR 250,000 - 350,000",
+    priceRange: [250000, 350000],
     features: ["Celebrity photographer", "Full day coverage", "Premium editing & album"],
     color: "from-purple-400 to-pink-500"
   }
