@@ -10,7 +10,7 @@ const cakeOptions = [
     title: "Budget Cakes & Boxes",
     price: "LKR 400 - 600",
     priceRange: [400, 600],
-    features: ["Simple butter cake", "Plain presentation", "Standard cake boxes"],
+    features: ["Simple wedding cake / cupcakes", "Plain presentation", "Standard cake boxes"],
     color: "from-green-400 to-emerald-500"
   },
   {
@@ -18,7 +18,7 @@ const cakeOptions = [
     title: "Mid-Range Cakes & Boxes",
     price: "LKR 700 - 800",
     priceRange: [700, 800],
-    features: ["Rich fruit cake", "Decorative icing", "Quality boxes"],
+    features: ["Rich wedding cake", "Flawless tasting", "Quality boxes"],
     color: "from-blue-400 to-indigo-500"
   },
   {
@@ -26,7 +26,7 @@ const cakeOptions = [
     title: "Premium Cakes & Boxes",
     price: "LKR 1,000 - 1,200",
     priceRange: [1000, 1200],
-    features: ["Luxury cake flavors (e.g. ribbon cake)", "Elaborate designs", "Custom printed boxes"],
+    features: ["Wedding cake made of imported materials", "Elaborate designs", "Stunning boxes"],
     color: "from-purple-400 to-pink-500"
   }
 ];

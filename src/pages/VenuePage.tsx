@@ -24,7 +24,7 @@ const VenuePage = () => {
       title: "Budget Venue",
       price: "LKR 4,500 - 6,500",
       priceRange: [4500, 6500],
-      features: ["Community hall or simple hotel", "Basic decoration", "Standard seating", "Local catering"],
+      features: ["Simple hotel or a reception hall", "basic menue", "Standard seating", "Local catering"],
       color: "from-green-400 to-emerald-500"
     },
     {
@@ -32,7 +32,7 @@ const VenuePage = () => {
       title: "Mid-Range Venue",
       price: "LKR 7,000 - 9,000",
       priceRange: [7000, 9000],
-      features: ["3-star hotel or nice banquet hall", "Semi-luxury decoration", "Comfortable seating", "Quality catering"],
+      features: ["3-star hotel or nice banquet hall", "A very good menue", "Comfortable seating", "Quality catering"],
       color: "from-blue-400 to-indigo-500"
     },
     {
@@ -40,7 +40,7 @@ const VenuePage = () => {
       title: "Premium Venue",
       price: "LKR 10,000 - 15,000",
       priceRange: [10000, 15000],
-      features: ["5-star hotel or luxury venue", "Elegant decoration", "Premium seating", "Gourmet catering"],
+      features: ["5-star hotel or luxury venue", "An astounding menue!", "Action stations", "Live cookings"],
       color: "from-purple-400 to-pink-500"
     }
   ];

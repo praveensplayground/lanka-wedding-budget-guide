@@ -12,7 +12,7 @@ const bridesmaidsbestmanOptions = [
     price: "LKR 20,000 - 50,000",
     priceRange: [20000, 50000],
     features: [
-      "Basic attire & accessories",
+      "I will rent for the few hours!",
       "Simple coordination",
       "Standard arrangements"
     ],
@@ -24,7 +24,7 @@ const bridesmaidsbestmanOptions = [
     price: "LKR 100,000 - 150,000",
     priceRange: [100000, 150000],
     features: [
-      "Designer attire collection",
+      "I'm going to buy a nice outfit for them!",
       "Professional coordination",
       "Enhanced arrangements"
     ],
@@ -36,8 +36,8 @@ const bridesmaidsbestmanOptions = [
     price: "LKR 250,000 - 400,000",
     priceRange: [250000, 400000],
     features: [
-      "Luxury attire & styling",
-      "Complete coordination package",
+      "I want the best looking ones for my wedding party!",
+      "Complete set of bridesmaids/bestman outfits",
       "Premium arrangements"
     ],
     color: "from-purple-400 to-pink-500"
