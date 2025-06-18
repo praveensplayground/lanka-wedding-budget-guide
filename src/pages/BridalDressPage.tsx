@@ -12,7 +12,7 @@ const bridalDressOptions = [
     price: "LKR 50,000 - 80,000",
     priceRange: [50000, 80000],
     features: [
-      "Simple elegant design",
+      "I'm OK with just a rented dress",
       "Basic fabric quality",
       "Standard accessories included"
     ],
@@ -24,7 +24,7 @@ const bridalDressOptions = [
     price: "LKR 100,000 - 200,000",
     priceRange: [100000, 200000],
     features: [
-      "Designer dress collection",
+      "I will shop for an elegant dress!",
       "Premium fabric & embellishments",
       "Professional styling included"
     ],
@@ -36,7 +36,7 @@ const bridalDressOptions = [
     price: "LKR 300,000 - 500,000",
     priceRange: [300000, 500000],
     features: [
-      "Luxury designer collection",
+      "I want a designer gown for my wedding!",
       "Custom tailoring & fittings",
       "Complete bridal package"
     ],

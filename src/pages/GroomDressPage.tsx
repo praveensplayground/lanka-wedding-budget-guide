@@ -12,7 +12,7 @@ const groomDressOptions = [
     price: "LKR 40,000 - 80,000",
     priceRange: [40000, 80000],
     features: [
-      "Traditional or modern outfit",
+      "I'm OK with a rented suite / traditional dress",
       "Basic fabric quality",
       "Standard accessories"
     ],
@@ -24,7 +24,7 @@ const groomDressOptions = [
     price: "LKR 100,000 - 200,000",
     priceRange: [100000, 200000],
     features: [
-      "Designer collection",
+      "I will buy a nice suit or traditional outfit",
       "Premium fabric & tailoring",
       "Complete accessories set"
     ],
@@ -36,8 +36,8 @@ const groomDressOptions = [
     price: "LKR 250,000 - 600,000+",
     priceRange: [250000, 600000],
     features: [
-      "Luxury designer wear",
-      "Custom tailoring & fittings",
+      "I want to be the best dressed groom!",
+      "Custom tailoring with designer fabrics",
       "Premium accessories & styling"
     ],
     color: "from-purple-400 to-pink-500"

@@ -10,7 +10,7 @@ const carOptions = [
     title: "Budget Car/Transport",
     price: "LKR 8,000 - 12,000",
     priceRange: [8000, 12000],
-    features: ["Basic sedan/van", "Non-luxury vehicle", "Decor not included"],
+    features: ["Basic sedan", "Non-luxury vehicle", "Basic decorations"],
     color: "from-green-400 to-emerald-500"
   },
   {
@@ -26,7 +26,7 @@ const carOptions = [
     title: "Premium Car/Transport",
     price: "LKR 25,000 - 35,000",
     priceRange: [25000, 35000],
-    features: ["Limousine/luxury SUV", "Custom decor & amenities", "Full wedding package"],
+    features: ["Maybe a Limo!", "Exquisitely decorated", "A chauffeur-driven experience"],
     color: "from-purple-400 to-pink-500"
   }
 ];

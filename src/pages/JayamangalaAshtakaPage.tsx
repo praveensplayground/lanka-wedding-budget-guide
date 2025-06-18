@@ -13,7 +13,7 @@ const jayamangalaOptions = [
     price: "LKR 15,000 - 30,000",
     priceRange: [15000, 30000],
     features: [
-      "Traditional ceremony setup",
+      "I'll employ a local priest",
       "Basic decorations",
       "Standard arrangements"
     ],
@@ -25,8 +25,8 @@ const jayamangalaOptions = [
     price: "LKR 40,000 - 75,000",
     priceRange: [40000, 75000],
     features: [
-      "Enhanced ceremony setup",
-      "Premium decorations",
+      "I will hire a professional priest and dancers",
+      "Traditional performances",
       "Professional arrangements"
     ],
     color: "from-blue-400 to-indigo-500"
@@ -37,8 +37,8 @@ const jayamangalaOptions = [
     price: "LKR 100,000 - 200,000+",
     priceRange: [100000, 200000],
     features: [
-      "Luxury ceremony setup",
-      "Exquisite decorations",
+      "A proper spectacle with a renowned priest",
+      "Exquisite performers",
       "Complete traditional package"
     ],
     color: "from-purple-400 to-pink-500"

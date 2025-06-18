@@ -11,7 +11,7 @@ const musicOptions = [
     price: "LKR 80,000 - 120,000",
     priceRange: [80000, 120000],
     features: [
-      "Local band or DJ",
+      "A local DJ would be fine",
       "Basic sound system",
       "No special effects"
     ],
@@ -23,7 +23,7 @@ const musicOptions = [
     price: "LKR 150,000 - 400,000",
     priceRange: [150000, 400000],
     features: [
-      "Well-known band/ensemble",
+      "Live band with 3-5 members",
       "Professional sound & lighting",
       "Limited live performances"
     ],
@@ -35,7 +35,7 @@ const musicOptions = [
     price: "LKR 500,000 - 800,000",
     priceRange: [500000, 800000],
     features: [
-      "Celebrity band or artist",
+      "I'm bringing BNS!",
       "State-of-the-art audio/visuals",
       "Full live concert experience"
     ],

@@ -12,7 +12,7 @@ const decorationOptions = [
     price: "LKR 500 - 800",
     priceRange: [500, 800],
     features: [
-      "Basic floral centerpieces",
+      "Basic imitation flowers",
       "Simple backdrop",
       "Minimal table décor"
     ],
@@ -24,7 +24,7 @@ const decorationOptions = [
     price: "LKR 1,300 - 2,000",
     priceRange: [1300, 2000],
     features: [
-      "Custom flower arrangements",
+      "I will have a mix of real and imitation flowers",
       "Themed stage decor",
       "Table runners & moderate lighting"
     ],
@@ -36,7 +36,7 @@ const decorationOptions = [
     price: "LKR 3,000 - 4,000",
     priceRange: [3000, 4000],
     features: [
-      "Designer floral installations",
+      "Fresh flowers & custom arrangements",
       "Elegant themed decor",
       "Premium lighting & ambience"
     ],

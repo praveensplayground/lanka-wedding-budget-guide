@@ -24,7 +24,7 @@ const LiquorPage = () => {
       title: "Budget Drinks",
       price: "LKR 1,500 - 2,500",
       priceRange: [1500, 2500],
-      features: ["Local spirits & beer", "Standard selection", "Self-serve"],
+      features: ["Local spirits & beer", "no wine", "Self-serve"],
       color: "from-green-400 to-emerald-500"
     },
     {
@@ -40,7 +40,7 @@ const LiquorPage = () => {
       title: "Premium Bar",
       price: "LKR 6,000 - 9,000",
       priceRange: [6000, 9000],
-      features: ["Imported liquors", "Full cocktails", "Luxe bar experience"],
+      features: ["Imported liquors", "Cocktails, wines", "Luxe bar experience"],
       color: "from-purple-400 to-pink-500"
     }
   ];

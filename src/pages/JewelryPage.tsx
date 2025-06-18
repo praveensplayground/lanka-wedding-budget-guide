@@ -12,7 +12,7 @@ const jewelryOptions = [
     price: "LKR 250,000 - 300,000",
     priceRange: [250000, 300000],
     features: [
-      "Basic gold jewelry set",
+      "Basic neclace and ring set",
       "Traditional designs",
       "Standard quality"
     ],
@@ -36,7 +36,7 @@ const jewelryOptions = [
     price: "LKR 750,000 - 1,200,000",
     priceRange: [750000, 1200000],
     features: [
-      "Luxury gold & gemstone jewelry",
+      "Neclace, earrings, and ring set and bangles",
       "Exclusive designer pieces",
       "Premium craftsmanship"
     ],
